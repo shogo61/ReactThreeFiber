@@ -6,7 +6,7 @@ import { OrbitControls, Box } from "@react-three/drei";
 function StaticBox() {
   return (
     <Box args={[1, 1, 1]} scale={1.5}>
-      <meshStandardMaterial color="royalblue" />
+      <meshStandardMaterial color="teal" />
     </Box>
   );
 }
@@ -14,9 +14,16 @@ function StaticBox() {
 export default function App() {
   return (
     <div className="w-full h-screen">
-      <Canvas camera={{ position: [3, 3, 3] }}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} />
+      <Canvas shadows camera={{ position: [3, 3, 3] }}>
+        {/* <color attach="background" args={["#222222"]} /> // 背景色 */}
+        <ambientLight intensity={3} /> // 全体的な環境光
+        <pointLight position={[-3, -3, -3]} intensity={20} /> // 放射状の光
+        <spotLight
+          position={[5, 5, 5]}
+          angle={0.3}
+          penumbra={0.5}
+          intensity={20}
+        /> // 線状の光
         <StaticBox />
         <OrbitControls
           enablePan={true}
