@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 function StaticBox() {
   return (
     <Box args={[1, 1, 1]} scale={1.5}>
-      <meshStandardMaterial color="teal" />
+      <meshStandardMaterial color="#fdd000" />
     </Box>
   );
 }
