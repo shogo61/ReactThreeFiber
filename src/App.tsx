@@ -50,12 +50,7 @@ export default function App() {
         />
         <StaticBox />
         <Scene resetTrigger={resetTrigger} />{" "}
-        {/* OrbitControlsはSceneコンポーネント内で一箇所だけレンダリング */}
       </Canvas>
-      <div className="absolute top-0 left-0 p-4 text-white bg-black bg-opacity-50 rounded">
-        <p>ドラッグして回転 | ズーム: スクロール | 移動: Shift+ドラッグ</p>
-        <p>キーボード操作: 矢印キーで回転、+/-でズーム</p>
-      </div>
       <button
         className="absolute bottom-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={resetCamera}
